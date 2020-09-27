@@ -96,7 +96,6 @@ VALUES (4, now(), 1227, 19, 1460);
 INSERT INTO factura (id_cliente, fecha, subtotal, iva, total) 
 VALUES (4, now(), 80, 19, 95);
 
-
 INSERT INTO detalle (id_factura, id_producto, cantidad, valor_total) 
 VALUES (1, 1, 1, 60);
 INSERT INTO detalle (id_factura, id_producto, cantidad, valor_total) 
@@ -145,3 +144,10 @@ INSERT INTO detalle (id_factura, id_producto, cantidad, valor_total)
 VALUES (9, 8, 1, 399);
 INSERT INTO detalle (id_factura, id_producto, cantidad, valor_total) 
 VALUES (10, 7, 2, 80);
+
+-- CONSULTA 1: ¿Que cliente realizó la compra más cara?
+
+-- CONSULTA 2: ¿Que cliente pagó sobre 100 de monto?
+
+-- CONSULTA 3: ¿Cuantos clientes han comprado el producto 6
+SELECT count(*) cantidad FROM factura AS a INNER JOIN cliente AS b ON a.id_cliente = b.id INNER JOIN detalle AS c ON a.num_factura = c.id_factura WHERE c.id_producto = 6;
